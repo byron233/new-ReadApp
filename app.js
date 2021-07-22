@@ -34,6 +34,6 @@ app.use('/', indexRouter);
 app.use('/doc', uploadRouter);
 
 //var host = '127.0.0.1';
-var host = '192.168.1.26';
+//var host = '192.168.1.26';
 //Servidor Start
-app.listen(port, host ,()=>console.log(`Servidor en el puerto ${port}`));
+app.listen(port, ()=>console.log(`Servidor en el puerto ${port}`));
