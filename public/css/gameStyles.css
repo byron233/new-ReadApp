@@ -1,0 +1,620 @@
+/*Estilos comunes*/
+.sombrita{
+    box-shadow: 1px 1px 4px rgba(0,0,0,0.5);
+}
+.invisible{
+    position: absolute;
+    left: 0;
+    top: 0;
+    visibility: hidden;
+}
+body{
+    background-position: center;
+    transition: all .5s;
+    background-position: center;
+    transition: all .5s;
+    display: grid;
+    align-content: center;
+    width: 100vw;
+    height: 100vh;
+}
+.currentInfo{
+    font-size: 1.3em;
+    color: black;
+    animation-name: parpadeo;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+}
+.wd{
+    width: 100%;
+}
+.btn{
+    display: block;
+    padding: 10px;
+    border-radius: 10px;
+    width: max-content;
+    height: max-content;
+    color: #0984e3;
+    cursor: pointer;
+    transition: all .5s;
+    border: 2px solid #0984e3;
+    font-size: medium;
+    text-align: center;
+}
+.generalCnt{
+    overflow: auto;
+    padding: 5%;
+}
+
+
+/*Animaciones*/
+@keyframes parpadeo{
+    0%{opacity: 1}
+    25%{opacity: 1}
+    50%{opacity: .5}
+    75%{opacity: .5}
+}
+@keyframes shake{
+    0%{
+        transform: translate(0px);
+    }
+    25%{
+        transform: translate(5px);
+    }
+    50%{
+        transform: translate(-10px);
+    }
+    75%{
+        transform: translate(0px);
+    }
+}
+@keyframes rotateAll{
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
+/*Contenido*/
+.encabezado{
+    background-color: rgba(255,255,255,0.8);
+    height: min-content;
+    margin: 20px auto;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-content: center;
+}
+.encabezado a{
+    width: min-content;
+    height: auto;
+    display: grid;
+    align-content: center;
+}
+.encabezado a img{
+    min-width: 250px;
+    width: 35%;
+}
+.opcionBtn{
+    width: 60px;
+    height: 60px;
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    cursor: pointer;
+    transition: all .5s;
+    position: relative;
+}
+
+.opcionBtn img{
+    width: 25px;
+    opacity: 0.5;
+    transition: all .5s;
+}
+.configOptions{
+    background-color: white;
+    width: 200px;
+    height: 120px;
+    position: absolute;
+    top:100%;
+    right: -0.5vw;
+    border-radius: 10px;
+    cursor:auto;
+    display: grid;
+    grid-template-rows: repeat(2,auto);
+    padding: 10px;
+    opacity: 0;
+    transition: all .5s;
+    z-index: -1;
+}
+.configCnt{
+    display: grid;
+    justify-content: center;
+    text-align: center;
+}
+.iconsCnt{
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    height: max-content;
+}
+.iconsCnt img{
+    cursor: pointer;
+    transition: all .5s;
+    width: 20px;
+}
+.iconsCnt img:hover{
+    opacity: 1;
+}
+.gameContent{
+    background-color: rgba(255,255,255,0.8);
+    height: auto;
+    margin: auto;
+    display: grid;
+    grid-template-rows: repeat(6,max-content);
+    padding: 20px 0px;
+    transition: all .5s;
+}
+#msg{
+    justify-self: center;
+    display: none;
+    text-align: center;
+}
+
+
+/*Controles de botones*/
+input[id="docOp"]:checked ~ .infoCnt #pageInfo, input[id="docOp"]:checked ~ .btnCnt #btnSubir, input[id="pdfOp"]:checked ~ .btnCnt #btnStart{
+    display: block;
+}
+
+input[id="docOp"]:checked ~ .rbtn-Cnt label[for="docOp"], input[id="pdfOp"]:checked ~ .rbtn-Cnt label[for="pdfOp"]{
+    background-color: #0984e3;
+    color: white;
+}
+
+input[id="pdfOp"]:checked ~ .inForm textarea, input[id="docOp"]:checked ~ .inForm div {
+    display:block;
+}
+
+/********************************/
+.infoCnt{
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    padding: 10px 0px;
+}
+.rbtn-Cnt{
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    width: 70%;
+    margin: auto;
+}
+.inForm{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 10px 0px;
+}
+.inForm textarea{
+    width: 90%;
+    height: 100px;
+    resize: none;
+}
+.inForm div, .inForm textarea, #pageInfo{
+    display: none;
+    transition: all .5s
+}
+.btnFile{
+    border-color: #fbc531;
+    color: #fbc531;
+}
+.btnFile:hover{
+    background-color: #fbc531;
+    color: white;
+}
+.btnCtrl{
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+    padding: 10px 0px;
+}
+.btnCtrl button{
+    background-color: #718093;
+    border-color:#718093;
+    color: white;
+}
+.btnCtrl button:hover{
+    background-color:#414852;
+    border-color: #414852;
+}
+.btnStart , .btnReady{
+    border-color: #44bd32;
+    background-color: #44bd32;
+    color: white;
+    justify-self: center;
+    margin: 10px 0px;
+    transition: all .5s;
+    width: 40%;
+    display: none;
+    margin-left: 10%;
+}
+.btnStart:hover, .btnStart:disabled, .btnReady:hover{
+    background-color: #2a6e20;
+    border-color: #2a6e20;
+}
+.resetBtn {
+    width: 40px;
+    height: 40px;
+    background-color: #3498db;
+    border-radius: 100%;
+    display: grid;
+    border-color: #3498db;
+    margin: auto 10px;
+    visibility: hidden;
+    transition: all .5s;
+    cursor: pointer;
+    padding: 10px;
+    text-align: center;
+}
+.resetBtn:hover{
+    background-color: #2980b9;
+    border-color: #2980b9;
+}
+.btnCnt{
+    display: flex;
+    justify-content: center;
+}
+
+/*Estilos del game area */
+.gameArea{
+    width: 70%;
+    height: 100px;
+    margin: auto;
+    display: none;
+    justify-content: center;
+    align-content: center;
+}
+.gameArea h2{
+    font-size: 1.8em;
+    text-align: center;
+}
+
+/*Estilos del menu de opciondes de pdf */
+.pdfToolsCnt{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    top: 0;
+    opacity: 0;
+    z-index: -1;
+    transition: all .5s;
+    left: 0;
+    overflow: auto;
+}
+.slideCnt{
+    display:flex;
+    width: 70%;
+    height: max-content;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    border-radius: 5px;
+    overflow: hidden;
+    max-height: 600px;
+}
+.slide{
+    width: 100%;
+    display: grid;
+    grid-template-rows: 100% 100%;
+    transition: all .5s;
+}
+.pdfToolsCnt input[id="more"]:checked ~ .slideCnt .slide{
+    transform: translateY(-100%);
+}
+.pdfToolsCnt input[id="minus"]:checked ~ .slideCnt .slide{
+    transform: translateY(0%);
+}
+.completeText{
+    padding: 20px;
+    background-color: white;
+    text-align: justify;
+    overflow: auto;
+}
+.pdfTools{
+    display: grid;
+    grid-template-rows: repeat(2, auto);
+    padding: 20px;
+    max-height: 90vh;
+    overflow: auto;
+}
+.toolsCnt{
+    border-bottom: 1px solid #0984e3;
+    padding-bottom: 10px;
+}
+.infoDocCnt{
+    display: grid;
+    grid-template-rows: repeat(3, auto);
+}
+.infoItem{
+    margin-top: 10px;
+}
+.toolsCnt h3, .ajustCnt p{
+    text-align: center;
+}
+.toolViewCnt ,.ajustCnt{
+    margin-top: 10px;
+}
+.infoDataCnt{
+    width: 90%;
+    margin: auto;
+}
+.textResume{
+    width: 90%;
+    background: antiquewhite;
+    margin: 10px auto;
+    height: 100px;
+    overflow: auto;
+    padding: 10px;
+    text-align: justify;
+}
+.btnMore{
+    border-color: #ff9f43;
+    background-color: #ff9f43;
+    transition: all .5s;
+    color: white;
+    margin: auto;
+}
+.btnMore:hover{
+    background-color:#b16d2e;
+    border-color:#b16d2e;
+}
+.btnMinus{
+    border-radius: 100%;
+    display: flex;
+    margin: 5px auto;
+    border-radius: 100%;
+    display: flex;
+    margin: 5px auto;
+    padding: 10px;
+    cursor: pointer;
+    width:40px;
+}
+.btnMinus img{
+    width: 20px;
+}
+
+.infoDocCnt img{
+    width: 25px;
+    opacity: 0.5;
+    transition: all .5s;
+    cursor: pointer;
+}
+.infoDocCnt img:hover{
+    opacity: 1;
+}
+.swCtn{
+    display: block;
+    width: 45px;
+    height: 25px;
+    border-radius: 50px;
+    border: 2px solid #ff9f43;
+    cursor: pointer;
+    position: relative;
+    transition: all .5s;
+}
+.swCtn span{
+    display: block;
+    width: 20px;
+    height: 20px;
+    border-radius: 100%;
+    background-color: #ff9f43;
+    position: absolute;
+    transition: all .5s;
+    border: 2px solid #ff9f43;
+    left: 4%;
+}
+.swBtn:checked ~ .swCtn span{
+    transform: translate(100%);
+    background-color: white;
+    border-color: #0984e3;
+}
+.swBtn:checked ~ .swCtn{
+    background-color:#0984e3;
+    border-color:#0984e3 ;
+}
+.configPage{
+    display: grid;
+    grid-template-rows: auto auto;
+}
+.swBtnControl{
+    display: flex;
+    width: 90%;
+    margin:auto;
+    align-content: center;
+    margin-top: 10px;
+}
+.swBtnControl p{
+    text-align: start;
+    margin-left: 10px;
+}
+.configPage form{
+    display: flex;
+    justify-content: space-around;
+    width: 90%;
+    margin: 10px auto;
+
+}
+.btnReady{
+    display: block;
+    margin: 10px auto 0px auto;
+}
+.loadCnt{
+    background-color: white;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    transition: all .5s;
+    opacity: 0;
+    z-index: -1;
+}
+.loadCnt div{
+    width: 100%;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+}
+.loadCnt div img{
+    width: 80px;
+    animation-iteration-count: infinite;
+    animation-duration: 1s;
+    align-content: center;
+    color: red;
+    font-size: 2em;
+}
+.loadCnt div p{
+    font-size: 1.3em;
+    color: #0984e3;
+    margin:10px auto;
+    animation-iteration-count: infinite;
+    animation-duration: 1s;
+    max-width: 80%;
+}
+#retryBtn{
+    margin: 20px auto;
+    border-color: red;
+    color: red;
+    transition: all .5s;
+}
+#retryBtn:hover{
+    background-color: red;
+    color: white;
+}
+#btnReady{
+    border: none;
+}
+
+/*Footer*/
+footer{
+    background-color: #2f3542;
+    padding: 20px;
+    margin-top: 10px;
+    color: white;
+    font-style: italic;
+    text-align: center;
+    font-weight: lighter;
+    font-size: 1em;
+}
+.page404{
+    width: 100%;
+    height: 100vh;
+    text-align: center;
+    font-size: 1.5em;
+    font-weight: bold;
+    background-color: #f7c6c5;
+    display: grid;
+    align-content: center;
+    justify-content: center
+}
+#velPP:disabled, #velMM:disabled{
+    opacity: 0.5;
+    background-color: #414852;
+}
+
+/*REsponsive*/
+@media screen and (max-width: 800px) {
+    .btn{
+        font-size: 0.9em;
+    }
+    .rbtn-Cnt{
+        width: 90%;
+    }
+    .encabezado a img{
+        min-width: 220px;
+    }
+    .slideCnt{
+        font-size: 0.85em
+    }
+    .configPage form div input{
+        width: 60%;
+    }
+    .gameArea h2 {
+        font-size: 1.4em;
+    }
+}
+@media screen and (max-width:500px) {
+    .encabezado a img{
+        min-width: 220px;
+    }
+    .btn {
+        font-size: 0.8em;
+        width: 45%;
+    }
+    .btnStart{
+        margin-left: 15%;
+    }
+    .btnFile{
+        width: auto;
+        max-width: 90%;
+        margin: auto;
+    }
+    #msg{
+        font-size: 0.9em;
+    }
+    .slideCnt{
+        width: 85%;
+    }
+    .swCtn{
+        height: 20px;
+    }
+    .swCtn span{
+        height: 15px;
+        width: 15px;
+    }
+    .swBtn:checked ~ .swCtn span{
+        transform: translate(125%);
+    }
+    .infoCnt p{
+        text-align: center;
+        width: 30%;
+        font-size: 0.8em;
+    }
+    footer{
+        font-size: 0.7em;
+        padding: 10px;
+    }
+    .loadCnt div img {
+        width: 60px;
+    }
+    .loadCnt div p {
+        font-size: 0.9em;
+    }
+    .loadCnt div img{
+        font-size: 1em;
+    }
+    .page404{
+        font-size: 1em;
+    }
+}
+@media screen and (max-width:350px) {
+    .slideCnt{
+        max-height: 400px;
+    }
+}
+@media screen and (max-height: 800px) and (orientation: landscape){
+    .slideCnt{
+    max-height: 90vh;
+    width: 90%;
+    }
+    .page404{
+        font-size: 1em;
+    }
+}
+
