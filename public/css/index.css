@@ -1,0 +1,184 @@
+*{
+    font-family: 'Roboto',sans-serif;
+    text-align: center;
+    padding: 5px;
+}
+h1
+{
+    font-size: 30px;
+    font-weight: 900;  
+    text-shadow:-1px -1px 1px #000, 1px 1px 1px #000, -1px 1px 1px #000, 1px -1px 1px #000;
+}
+section
+{
+    background-color: #20FFE4;
+    font-weight: bolder;
+    font-size:12px;
+    text-shadow: 1.3px 0px #000;
+}
+#SecondSection, #ThirdSection
+{
+    display:none;
+}
+img
+{
+    width:90%;
+}
+button
+{
+    font-size:12px;
+    border-radius:15%;
+    font-weight: bolder;
+    background-color: #20FFE4;
+}
+body
+{
+   height:700px;
+   display:flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: space-between;
+   -webkit-transition: 1.5s linear;
+    transition: 1.5s linear;
+    opacity: 0.1;
+}
+
+
+/*--------------------------------------Responsive design -----------------------------------------------*/
+
+/* Responsive Portrait*/
+
+/*Mobile*/
+@media only screen and (min-width: 360px) and (orientation:portrait) {
+    
+    h1{
+        font-size: 42px;
+    }
+    section
+    {
+      font-size:14px;
+    }
+    image
+    {
+        width: 90%;
+    }
+    button
+    {
+        font-size:14px;
+    }
+  }
+
+  
+/*Tablet*/
+@media only screen and (min-width: 700px) and (orientation:portrait){
+    body {
+        height: 1024px;
+    }
+    h1{
+        font-size: 46px;
+    }
+    section
+    {
+      font-size:18px;
+    }
+    image
+    {
+        width: 70%;
+    }
+    button
+    {
+        font-size:18px;
+    }
+  }
+
+/* Ipads */
+  @media only screen and (min-width: 1024px) and (orientation:portrait) {
+    body {
+        height: 1336px;
+    }
+    h1{
+        font-size: 60px;
+    }
+    section
+    {
+      font-size:28px;
+    }
+    image
+    {
+        width: 75%;
+    }
+    button
+    {
+        font-size:28px;
+    }
+  }
+
+  
+  /*Responsive landscape*/
+  
+  /*Phone*/
+  @media only screen and (min-width: 600px) and (orientation: landscape) {
+
+    body 
+     {
+     height: 360px;
+     }
+     img 
+     {
+       width: 50%;
+     }
+     
+ }
+
+ /*Tablets*/
+ @media only screen and (min-width: 1024px) and (orientation: landscape) {
+
+    body 
+     {
+     height: 768px;
+     }
+     img 
+     {
+       width: 50%;
+     }
+     h1{
+        font-size: 58px;
+    }
+    section
+    {
+      font-size:19px;
+    }
+    
+    button
+    {
+        font-size:19px;
+    }
+     
+ }
+  
+  /*Laptops*/
+  @media only screen and (min-width: 1300px) and (orientation: landscape) {
+
+   body 
+    {
+        max-height: fit-content;
+        height: 610px;
+    }
+    img 
+    {
+      width: 65%;
+    }
+    h1{
+        font-size: 60px;
+    }
+    section
+    {
+      font-size:22px;
+    }
+
+    button
+    {
+        font-size:22px;
+    }
+    
+}
