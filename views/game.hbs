@@ -1,5 +1,131 @@
-juego
+<div class="generalCnt">
+    <!--Cabezera con menu de configuracion, logo y botones de modo oscuro y background-->
+    <div class="encabezado sombrita wd" id="encabezado">
+        <a href="/"><img id="imgHead" src="img/Sin títuloTrasparente.svg" alt="Reader Racer"></a>
+        <div class="opcionBtn">
+            <img id="opcionesBtn" src="img/iconos/cog-solid.svg" alt="Opciones">
+            <div class="configOptions sombrita" , id="configOptions">
+                <div class="iconsCnt">
+                    <img id="bgChange" src="img/iconos/image-regular.svg" alt="Background">
+                    <img id="sunNmoon" src="img/iconos/moon-solid.svg" alt="Sun and Moon">
+                </div>
 
+                <div class="configCnt">
+                    <label for="ppv">Palabras por vez</label>
+                    <input type="number" name="ppv" id="ppv" min="1" max="4" value="1">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Area de juego-->
+    <div class="gameContent sombrita wd" id="gameContent">
+        <input class="invisible rbtn" type="radio" name="mode" id="docOp">
+        <input class="invisible rbtn" type="radio" name="mode" id="pdfOp" checked>
+        <div class="rbtn-Cnt" id="rbtn">
+            <label class="btn" for="pdfOp" id="copyOpBtn">Copiar Texto</label>
+            <label class="btn" for="docOp" id="fileOpBtn">Añadir Archivo (PDF/WORD)</label>
+        </div>
+
+        <div class="infoCnt">
+            <p id="wordsInfo">Palabras:</p>
+            <p id="pageInfo">Página:</p>
+            <p id="velInfo">Palabras/min:</p>
+        </div>
+
+        <form class="inForm" id="inForm">
+            <textarea name="textoIn" id="textoIn" placeholder="Ingresa tu texto aqui..." required></textarea>
+            <div>
+                <label class="btn btnFile" for="docIn" id="btnFile">Selecciona tu archivo</label>
+                <input class="invisible" type="file" name="docIn" id="docIn" required accept=".docx, .pdf">
+            </div>
+        </form>
+
+        <div class="gameArea" id="gameArea">
+            <h2 id="textShow"></h2>
+        </div>
+
+        <p id="msg">Necesitas al menos 50 palabras</p>
+        <div class="btnCtrl">
+            <button id="velPP" class="btn">Aumentar Velocidad</button>
+            <button id="velMM" class="btn">Disminuir Velocidad</button>
+        </div>
+
+        <div class="btnCnt">
+            <button class="btn btnStart" id="btnStart" disabled>Comenzar</button>
+            <button class="btn btnStart" id="btnSubir" disabled>Subir</button>
+            <div class="resetBtn" id="resetBtn"><img src="img/iconos/undo-alt-solidW.svg" alt=""></div>
+        </div>
+    </div>
+
+    <!--Area del menu de opciones de los documentos subidos-->
+    <div class="pdfToolsCnt" id="pdfToolsCnt">
+        <input class="invisible" type="radio" name="more" id="more" >
+        <input class="invisible" type="radio" name="more" id="minus" checked>
+
+        <div class="slideCnt  sombrita" id="slideCnt">
+            <div class="slide">
+                <div class="pdfTools">
+                    <div class="toolsCnt infoDocCnt">
+                        <img id="backBtn" src="img/iconos/arrow-left-solid.svg" alt="Back">
+                        <div class="infoDataCnt">
+                            <h2 class="infoItem">Titulo del libro</h2>
+                            <p class="infoItem">Número de páginas:</p>
+                            <p class="infoItem">Número de palabras:</p>
+                        </div>
+                        <div class="toolViewCnt">
+                            <h3>Resumen del texto</h3>
+                            <p class="infoItem textResume"></p>
+                            <label class="btn btnMore" for="more">Ver texto completo</label>
+                        </div>
+                    </div>
+                    <div class="toolsCnt ajustCnt">
+                        <div>
+                            <h3>Ajustes</h3>
+                            <p id="avisoPdf">Se seleccionara todo el contenido</p>
+                        </div>
+                        <div class="configPage">
+                            <div class="swBtnControl">
+                                <input class="invisible swBtn" type="checkbox" name="swbtn" id="swbtn">
+                                <label class="swCtn sombrita" for="swbtn">
+                                    <span></span>
+                                </label>
+                                <p>Elegir páginas</p>
+                            </div>
+                            <form id="pageChangeForm">
+                                <div>
+                                    <label for="desdeIn">Desde: </label>
+                                    <input type="number" name="desdeIn" id="desdeIn" value="1" disabled>
+                                </div>
+                                <div>
+                                    <label for="hastaIn">Hasta: </label>
+                                    <input type="number" name="hastaIn" id="hastaIn" value="2" disabled>
+                                </div>
+                            </form>
+                            <button class="btn btnReady" id="btnReady">Listo!</button>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="completeText" id="completeText">
+                    <label class=" btnMore btnMinus" for="minus"><img src="/img/iconos/arrow-up-solid.svg"
+                            alt=""></label>
+                    <p class="infoItem"></p>
+                </div>
+            </div>
+            <div class="loadCnt" id="loadCnt">
+                <div>
+                    <img src="/img/iconos/loading-process.svg" alt="Cargando">
+                    <p></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <input type="hidden" name="fileCheck" id="fileCheck">
+    <footer class="wd sombrita">
+        <span>Creado por negocio...</span>
+    </footer>
+</div>
 
 <!--Scripts-->
-<script src="js/estilosGame"></script>
+<script src="js/estilosGame.js"></script>
